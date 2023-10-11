@@ -14,7 +14,6 @@ func Handle(ctx context.Context, e event.Event) (*event.Event, error) {
 	 *
 	 * Try running `go test`.  Add more test as you code in `handle_test.go`.
 	 */
-
 	fmt.Println("Received event")
 	fmt.Println(e) // echo to local output
 	return &e, nil // echo to caller

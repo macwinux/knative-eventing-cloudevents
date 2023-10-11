@@ -1,0 +1,9 @@
+{
+ "type" : "type2",
+ "users" : [
+    {
+        "age" : 15,
+        "name" : "Paco"
+    }
+ ]   
+}

@@ -27,3 +27,7 @@ as you add business logic to your function in order to test its behavior.
 ```console
 python test_func.py
 ```
+
+
+# Examples
+kn func invoke --data '{\"type\":\"type2\",\"users\":[{\"age\":15,\"name\":\"Luis\"}]}'
