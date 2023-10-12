@@ -1,5 +1,5 @@
 from dataclasses import dataclass, field
-from typing import List
+from typing import List, Literal
 
 import marshmallow_dataclass
 import marshmallow.validate
@@ -12,7 +12,7 @@ class User:
 
 @dataclass
 class Type2:
-    type: str = field(default="type2")
-    users: List[User] = field(default_factory=list)    
+    type: Literal['type2']
+    users: List[User] = field(default_factory=list)  
 
 input_schema = marshmallow_dataclass.class_schema(Type2)()

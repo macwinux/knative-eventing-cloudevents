@@ -1,5 +1,9 @@
 specVersion: 0.35.0
 name: knative-eventing-cloudevents-python-type2
 runtime: python
+registry: macwinux/knative-eventing-cloudevents-python
+image: macwinux/knative-eventing-cloudevents-python/knative-eventing-cloudevents-python-type2:latest
 created: 2023-10-11T10:22:47.9701235+02:00
 invoke: cloudevent
+build:
+  builder: pack
