@@ -7,7 +7,7 @@ import marshmallow.validate
 @dataclass
 class User:
     age: int = field(metadata={"validate": marshmallow.validate.Range(min=10, max=100)})
-    name: str = field(default="")
+    name: str
     
 
 @dataclass

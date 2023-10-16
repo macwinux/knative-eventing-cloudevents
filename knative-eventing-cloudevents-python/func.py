@@ -3,7 +3,7 @@ import input as i
 import output as o
 import json
 #import ast
-@event
+@event(event_source="event.type2", event_type="event.type3")
 def main(context: Context):
     """
     Function template
@@ -17,6 +17,7 @@ def main(context: Context):
         data = json.loads(data)
     input = i.input_schema.load(data)
     output = o.Type3("type3",input.users[0])
+    print(output)
     return o.output_schema.dump(output)
 
 

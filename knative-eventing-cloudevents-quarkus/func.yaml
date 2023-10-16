@@ -1,9 +1,12 @@
 specVersion: 0.35.0
 name: knative-eventing-cloudevents-quarkus
 runtime: quarkus
+registry: macwinux/knative-eventing-quarkus
+image: macwinux/knative-eventing-quarkus/knative-eventing-cloudevents-quarkus:latest
 created: 2023-10-11T12:04:31.831971+02:00
 invoke: cloudevent
 build:
+  builder: pack
   buildEnvs:
   - name: BP_NATIVE_IMAGE
     value: "false"

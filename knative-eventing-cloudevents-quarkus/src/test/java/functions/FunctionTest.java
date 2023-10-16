@@ -3,7 +3,6 @@ package functions;
 import io.quarkus.funqy.knative.events.CloudEventBuilder;
 import io.quarkus.test.junit.QuarkusTest;
 import io.restassured.RestAssured;
-import org.hamcrest.CoreMatchers;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -15,7 +14,8 @@ public class FunctionTest {
 
     @Test
     void testFunction() {
-        Output output = (new Function()).function(CloudEventBuilder.create().build(new Input("Hello!"))).data();
+        User user = new User(19, "Carlos");
+        Output output = (new Function()).function(CloudEventBuilder.create().build(new Input("type3", user))).data();
         Assertions.assertEquals("Hello!", output.getMessage());
     }
 

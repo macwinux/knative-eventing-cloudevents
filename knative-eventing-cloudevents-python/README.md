@@ -32,3 +32,11 @@ python test_func.py
 # Examples
 kn func run
 kn func invoke --data '{\"type\":\"type2\",\"users\":[{\"age\":15,\"name\":\"Luis\"}]}'
+
+curl "http://localhost:8080/" -X POST \
+  -H "Content-Type: application/json" \
+  -H "Ce-SpecVersion: 1.0" \
+  -H "Ce-Type: my-type" \
+  -H "Ce-Source: cURL" \
+  -H "Ce-Id: 42" \
+  -d '{"type": "type2", "users":[{"age":15,"name":"Luis"}]}'
