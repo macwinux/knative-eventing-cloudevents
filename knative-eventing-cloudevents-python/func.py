@@ -2,8 +2,10 @@ from parliament import Context, event
 import input as i
 import output as o
 import json
+import logging
+from cloudevents.http import CloudEvent
 #import ast
-@event(event_source="event.type2", event_type="event.type3")
+@event
 def main(context: Context):
     """
     Function template
@@ -17,7 +19,13 @@ def main(context: Context):
         data = json.loads(data)
     input = i.input_schema.load(data)
     output = o.Type3("type3",input.users[0])
+    logging.info(output)
     print(output)
-    return o.output_schema.dump(output)
+    attributes = {
+    "type": "event.type3",
+    "source": "ce-python",
+    "datacontenttype": "application/json; charset=utf-8"
+    }
+    return CloudEvent(attributes,o.output_schema.dump(output))
 
 

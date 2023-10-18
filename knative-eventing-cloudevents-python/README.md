@@ -40,3 +40,12 @@ curl "http://localhost:8080/" -X POST \
   -H "Ce-Source: cURL" \
   -H "Ce-Id: 42" \
   -d '{"type": "type2", "users":[{"age":15,"name":"Luis"}]}'
+
+
+  curl "http://ke-ce-python.default.172.19.247.71.sslip.io" -X POST \
+  -H "Content-Type: application/json" \
+  -H "Ce-SpecVersion: 1.0" \
+  -H "Ce-Type: event.type2" \
+  -H "Ce-Source: cURL" \
+  -H "Ce-Id: 42" \
+  -d '{"type": "type2", "users":[{"age":17,"name":"Paco"}]}'

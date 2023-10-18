@@ -1,0 +1,15 @@
+apiVersion: serving.knative.dev/v1
+kind: Service
+metadata:
+  name: ke-ce-quarkus
+spec:
+  template:
+    metadata:
+      annotations:
+        # We want to check the logs, that's the reason of use this annotation
+        autoscaling.knative.dev/min-scale: "1"
+    spec:
+      containers:
+        # I recomend to always tag the image with a version, this is for testing purpose
+        - image: dev.local/knative-eventing-cloudevents-quarkus:latest
+          imagePullPolicy: Never

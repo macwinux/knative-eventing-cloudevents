@@ -2,7 +2,7 @@ specVersion: 0.35.0
 name: knative-eventing-cloudevents-quarkus
 runtime: quarkus
 registry: macwinux/knative-eventing-quarkus
-image: macwinux/knative-eventing-quarkus/knative-eventing-cloudevents-quarkus:latest
+image: dev.local/knative-eventing-cloudevents-quarkus:v1
 created: 2023-10-11T12:04:31.831971+02:00
 invoke: cloudevent
 build:

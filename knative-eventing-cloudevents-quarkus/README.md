@@ -104,8 +104,16 @@ http -v ${URL} \
 
 # Examples
 kn func run
-kn func invoke --data '{\"type\":\"type3\",\"user\":{\"age\":15,\"name\":\"Luis\"}}'
+Running wsl:
 curl "http://localhost:8080/" -X POST \
+  -H "Content-Type: application/json" \
+  -H "Ce-SpecVersion: 1.0" \
+  -H "Ce-Type: my-type" \
+  -H "Ce-Source: cURL" \
+  -H "Ce-Id: 42" \
+  -d '{"type": "type3", "user":{"age":15,"name":"Luis"}}'
+
+  curl "http://ke-ce-quarkus.default.172.19.247.71.sslip.io" -X POST \
   -H "Content-Type: application/json" \
   -H "Ce-SpecVersion: 1.0" \
   -H "Ce-Type: my-type" \
